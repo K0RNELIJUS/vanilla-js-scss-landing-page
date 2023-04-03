@@ -1,0 +1,60 @@
+@use '../base/breakpoints' as b;
+
+.benefits {
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 30px 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include b.breakpoint(md) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 38px 35px;
+  }
+
+  @include b.breakpoint(lg) {
+    max-width: 927px;
+    gap: 25px;
+    padding: 41px 0px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 21px;
+    gap: 6px;
+
+    background: var(--pink-light);
+    border-radius: 15px;
+
+    @include b.breakpoint(md) {
+      gap: 4px;
+    }
+
+    @include b.breakpoint(lg) {
+      flex-direction: row;
+      height: 98px;
+      padding: 10px 25px;
+      gap: 15px;
+
+      &:hover svg path {
+        fill: var(--red-dark);
+      }
+    }
+  }
+
+  &__txt {
+    text-align: center;
+    max-width: 133px;
+
+    @include b.breakpoint(lg) {
+      text-align: start;
+    }
+  }
+}
