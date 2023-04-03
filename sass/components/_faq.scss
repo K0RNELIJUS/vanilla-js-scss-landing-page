@@ -1,0 +1,100 @@
+@use '../base/breakpoints' as b;
+
+.faq {
+  background-color: var(--grey-light);
+  padding: 18px 18px 36px 18px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 16px;
+
+    @include b.breakpoint(md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__questions {
+    max-width: 393px;
+    margin: 0 auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include b.breakpoint(md) {
+      max-width: 696px;
+    }
+
+    @include b.breakpoint(lg) {
+      max-width: 802px;
+      gap: 18px;
+    }
+  }
+}
+
+.question {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__txt {
+    width: 100%;
+    max-width: 279px;
+  }
+
+  &__btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__open-icon {
+  }
+
+  &__close-icon {
+    display: none;
+  }
+}
+
+.answer {
+  display: none;
+
+  margin-top: 20px;
+  margin-bottom: 25px;
+
+  @include b.breakpoint(md) {
+    margin-top: 18px;
+  }
+
+  &__txt {
+    max-width: 295px;
+
+    @include b.breakpoint(md) {
+      max-width: 630px;
+    }
+
+    @include b.breakpoint(lg) {
+      max-width: 762px;
+    }
+  }
+}
+
+#last-answer {
+  margin-bottom: 0px;
+}
+
+// Manipulated with JS
+
+.show-answer .answer {
+  display: block;
+}
+
+.show-answer .question__open-icon {
+  display: none;
+}
+.show-answer .question__close-icon {
+  display: inline;
+}
