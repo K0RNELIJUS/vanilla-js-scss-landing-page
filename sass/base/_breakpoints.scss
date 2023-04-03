@@ -1,0 +1,16 @@
+// 	sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl:1400px
+// tablet: md
+// desktop: lg
+$breakpoints: (
+  'sm': 36em,
+  'md': 48em,
+  'lg': 62em,
+  'xl': 75em,
+  'xxl': 87.5em,
+);
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
