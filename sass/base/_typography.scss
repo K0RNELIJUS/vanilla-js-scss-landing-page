@@ -1,0 +1,69 @@
+@use './breakpoints' as b;
+
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1925rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--black);
+
+  @include b.breakpoint(md) {
+    font-size: 2rem;
+  }
+}
+
+.h2-title-regular {
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 28px;
+}
+
+.h2-title-sembiold {
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 28px;
+}
+
+.h3-body-semibold {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+}
+
+.h4-body-regular {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+
+  @include b.breakpoint(md) {
+    line-height: 20px;
+    font-size: 1rem;
+  }
+}
+
+.h4-body-semibold {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 17.64px;
+  letter-spacing: 0.05em;
+
+  @include b.breakpoint(md) {
+    line-height: 20px;
+    font-size: 1rem;
+  }
+}
