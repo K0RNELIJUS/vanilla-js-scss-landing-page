@@ -1,0 +1,224 @@
+@use '../base/breakpoints' as b;
+
+.process {
+  padding: 30px 20px 48px 20px;
+
+  &__title {
+    text-align: center;
+
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 51px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
+
+    margin: 0 auto;
+    max-width: 502px;
+    margin-bottom: 58px;
+
+    @include b.breakpoint(md) {
+      margin-bottom: 40px;
+    }
+
+    @include b.breakpoint(lg) {
+      max-width: 767px;
+      margin-bottom: 65px;
+    }
+  }
+}
+
+.flex-end-cont {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  margin: 0 auto;
+  gap: 20px;
+
+  position: relative;
+
+  @include b.breakpoint(md) {
+    max-width: 711.45px;
+    gap: 0px;
+  }
+
+  @include b.breakpoint(lg) {
+    max-width: 938px;
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 260px;
+
+    @include b.breakpoint(md) {
+      flex-direction: row;
+      max-width: 307px;
+
+      &:nth-child(1) {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 20px;
+      }
+    }
+
+    @include b.breakpoint(lg) {
+      max-width: 425px;
+      &:nth-child(1) {
+        margin-bottom: 61px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 62px;
+      }
+      &:nth-child(3) {
+        margin-top: 0px;
+        margin-bottom: 38px;
+      }
+    }
+
+    &.f-end {
+      align-items: flex-end;
+    }
+    & svg {
+      @include b.breakpoint(md) {
+        position: absolute;
+      }
+    }
+    &__wrapper {
+      max-width: 260px;
+    }
+  }
+}
+
+.step {
+  &__underline-cont-even,
+  &__underline-cont-odd {
+    display: none;
+    width: 100%;
+    @include b.breakpoint(md) {
+      display: flex;
+    }
+  }
+  &__underline-cont-even {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.txt-a-end-mobile {
+  text-align: end;
+  @include b.breakpoint(md) {
+    text-align: start;
+  }
+}
+
+.txt-a-end-tablet {
+  @include b.breakpoint(md) {
+    text-align: end;
+  }
+}
+
+#arrow-down-r-1,
+#arrow-down-l,
+#arrow-down-r-2 {
+  position: absolute;
+  @include b.breakpoint(md) {
+    display: none;
+  }
+}
+
+// svgs posion absolute
+#arrow-down-r-1 {
+  top: 29%;
+  left: 50%;
+  transform: translate(-29%, -50%);
+}
+
+#arrow-down-l {
+  top: 53%;
+  left: 50%;
+  transform: translate(-53%, -50%);
+}
+
+#arrow-down-r-2 {
+  top: 80%;
+  left: 50%;
+  transform: translate(-80%, -50%);
+}
+
+#shape {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  @include b.breakpoint(md) {
+    display: block;
+  }
+}
+
+#circle-top,
+#circle-bottom {
+  display: none;
+  position: absolute;
+
+  @include b.breakpoint(md) {
+    display: block;
+  }
+}
+
+#circle-top {
+  top: 1.5%;
+  left: 49.2%;
+  transform: translate(-1.5%, -49.2%);
+
+  @include b.breakpoint(lg) {
+    top: 1.5%;
+    left: 49.4%;
+    transform: translate(-1.5%, -49.4%);
+  }
+}
+
+#circle-bottom {
+  top: 98%;
+  left: 51%;
+  transform: translate(-98%, -51%);
+}
+
+@include b.breakpoint(md) {
+  #fist-icon {
+    top: 18%;
+    left: 48.5%;
+    transform: translate(-18%, -48.5%);
+  }
+
+  #exclamation-icon {
+    top: 42.75%;
+    left: 49.5%;
+    transform: translate(-42.75%, -49.5%);
+  }
+
+  #love-icon {
+    top: 67%;
+    left: 51.25%;
+    transform: translate(-67%, -51.25%);
+  }
+
+  #runner-icon {
+    top: 91.5%;
+    left: 52%;
+    transform: translate(-91.5%, -52%);
+  }
+}
