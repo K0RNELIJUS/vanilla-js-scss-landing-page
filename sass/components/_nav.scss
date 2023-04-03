@@ -1,0 +1,94 @@
+@use '../base/breakpoints' as b;
+
+.nav {
+  position: fixed;
+  top: -1px;
+
+  width: 100%;
+  background-color: var(--grey-light);
+  z-index: 1000;
+
+  &__header {
+    max-width: 919px;
+    padding: 15.5px 22px;
+
+    @include b.breakpoint(md) {
+      padding: 24px 22px;
+    }
+
+    @include b.breakpoint(lg) {
+      padding: 24px 0px;
+    }
+  }
+
+  &__toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include b.breakpoint(md) {
+      display: none;
+    }
+  }
+}
+
+@include b.breakpoint(md) {
+  .nav {
+    &__center {
+      max-width: 919px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 0;
+    }
+  }
+}
+
+.logo {
+  height: 40px;
+  position: absolute;
+  left: 46%;
+  top: 13px;
+
+  @include b.breakpoint(md) {
+    top: 18px;
+  }
+}
+
+.links {
+  height: 0;
+  padding: 0 27px;
+
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  @include b.breakpoint(md) {
+    padding: 0px 0px;
+
+    height: auto;
+    display: flex;
+  }
+
+  &__li {
+    padding-bottom: 28px;
+
+    @include b.breakpoint(md) {
+      padding-bottom: 0px;
+    }
+  }
+
+  &__link {
+    color: var(--black-light);
+
+    @include b.breakpoint(md) {
+      padding: 0;
+      margin-right: 24px;
+    }
+  }
+}
+
+.show-links {
+  height: 96px;
+  transition: all 0.2s ease-in-out;
+}
