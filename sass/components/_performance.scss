@@ -1,0 +1,89 @@
+@use '../base/breakpoints' as b;
+
+.perform {
+  padding: 40px 36px 40px 17px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &__title {
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+
+    @include b.breakpoint(md) {
+      max-width: 416px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 30px;
+
+    @include b.breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include b.breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include b.breakpoint(md) {
+      gap: 22px;
+    }
+
+    @include b.breakpoint(lg) {
+      &:hover svg path {
+        fill: var(--red-dark);
+      }
+    }
+  }
+
+  & svg {
+    width: 20px;
+
+    @include b.breakpoint(md) {
+      width: 40px;
+    }
+  }
+
+  &__txt {
+    max-width: 300px;
+
+    @include b.breakpoint(md) {
+      max-width: 175px;
+    }
+  }
+
+  @include b.breakpoint(md) {
+    #perform-1 {
+      order: 6;
+    }
+    #perform-2 {
+      order: 2;
+    }
+    #perform-3 {
+      order: 1;
+    }
+    #perform-4 {
+      order: 4;
+    }
+    #perform-5 {
+      order: 5;
+    }
+    #perform-6 {
+      order: 3;
+    }
+  }
+}
