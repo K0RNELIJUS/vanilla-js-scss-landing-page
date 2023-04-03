@@ -1,0 +1,65 @@
+@use '../base/breakpoints' as b;
+
+.hero-section {
+  height: 699px;
+  width: 100%;
+
+  margin-top: 52px;
+
+  @include b.breakpoint(md) {
+    margin-top: 80px;
+  }
+
+  background-image: url('../../assets/images/athlete-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+
+  @include b.breakpoint(md) {
+    background-image: url('../../assets/images/athlete-tablet.jpg');
+    background-position: center;
+    height: 1024px;
+  }
+
+  @include b.breakpoint(lg) {
+    background-image: url('../../assets/images/athlete-destop.jpg');
+    height: 700px;
+  }
+
+  &__txt {
+    width: calc(100% - 60px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 550px;
+    transform: translate(-50%, -50%);
+
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 51px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
+
+    color: var(--white);
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--white);
+    background-color: var(--red-dark);
+
+    @include b.breakpoint(md) {
+      bottom: 155px;
+    }
+
+    @include b.breakpoint(lg) {
+      bottom: 50px;
+    }
+  }
+}
