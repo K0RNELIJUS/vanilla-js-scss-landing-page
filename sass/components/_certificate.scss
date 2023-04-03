@@ -1,0 +1,47 @@
+@use '../base/breakpoints' as b;
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  padding: 40px;
+
+  background-color: var(--grey-light);
+
+  @include b.breakpoint(md) {
+    padding: 25px 0 25px 0;
+  }
+
+  &__logo {
+    width: 133px;
+    height: 133px;
+    background-image: url('../../assets/images/usda-organic-logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include b.breakpoint(md) {
+      width: 108px;
+      height: 100px;
+    }
+  }
+
+  &__txt {
+    text-align: center;
+    max-width: 313px;
+
+    @include b.breakpoint(md) {
+      font-size: 1rem;
+      line-height: 20px;
+      max-width: 351px;
+    }
+  }
+
+  @include b.breakpoint(md) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 45px;
+  }
+}
