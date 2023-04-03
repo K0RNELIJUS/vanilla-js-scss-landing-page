@@ -1,0 +1,218 @@
+@use '../base/breakpoints' as b;
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 35px 3px 40px 3px;
+  background-color: var(--pink-light);
+
+  @include b.breakpoint(md) {
+    padding: 35px 3px 80px 3px;
+  }
+
+  @include b.breakpoint(lg) {
+    padding: 35px 3px 43px 3px;
+  }
+
+  &__heading {
+    max-width: 391px;
+
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 96.5%;
+    text-align: center;
+
+    color: var(--red-dark);
+    & span {
+      color: var(--black-light);
+    }
+
+    margin-bottom: 38px;
+
+    @include b.breakpoint(sm) {
+      font-size: 3.125rem;
+    }
+
+    @include b.breakpoint(md) {
+      max-width: 100%;
+      margin-bottom: 36px;
+    }
+
+    @include b.breakpoint(lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    margin-bottom: 55px;
+
+    @include b.breakpoint(lg) {
+      flex-direction: row;
+      gap: 106.5px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 39px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-weight: 600px;
+    font-size: 1.25rem;
+    line-height: 25.2px;
+    letter-spacing: 5%;
+    line-height: 28px;
+
+    text-align: center;
+    color: var(--black);
+
+    margin-bottom: 30px;
+
+    @include b.breakpoint(md) {
+      margin-bottom: 54px;
+    }
+
+    @include b.breakpoint(lg) {
+      text-align: start;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__txt {
+    max-width: 362px;
+    margin: 0 auto;
+
+    @include b.breakpoint(md) {
+      max-width: 524px;
+    }
+
+    @include b.breakpoint(lg) {
+      max-width: 347px;
+      text-align: start;
+    }
+  }
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(2, 112px);
+  column-gap: 34px;
+  row-gap: 15px;
+  margin: 0 auto;
+
+  @include b.breakpoint(md) {
+    column-gap: 38.5px;
+    grid-template-columns: repeat(2, 125px);
+  }
+
+  @include b.breakpoint(lg) {
+    margin: 0 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+  }
+
+  &__image {
+    background-color: var(--pink-light);
+    height: 82px;
+    width: 112px;
+    background-blend-mode: multiply;
+
+    &.ingredient-1 {
+      background-image: url('../../assets/images/bueberry.jpg');
+    }
+
+    &.ingredient-2 {
+      background-image: url('../../assets/images/acacia-gum.jpg');
+    }
+
+    &.ingredient-3 {
+      background-image: url('../../assets/images/cinnamon.jpg');
+    }
+
+    &.ingredient-4 {
+      background-image: url('../../assets/images/tea.jpg');
+    }
+  }
+
+  &__description {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Swiper
+.swiper {
+  width: 100%;
+}
+
+.swiper-controls {
+  position: relative;
+  display: block;
+  width: 174px;
+  height: 18px;
+
+  margin-bottom: 18px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 12px;
+  width: 11px;
+  height: 18px;
+  z-index: 10;
+  background-size: 11px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::after {
+    content: '';
+  }
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination {
+  position: absolute;
+  top: -20px;
+}
+
+.swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: solid 1px var(--black-light);
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--black-light);
+}
+
+.bottom__btn {
+  background-color: var(--black-light);
+  color: var(--white);
+}
